@@ -20,7 +20,7 @@ class ClaraConan(ConanFile):
 
     def package(self):
         self.copy(pattern="LICENSE", dst="licenses", src="sources")
-        self.copy(pattern="*.hpp", dst="include", src=os.path.join("sources", "include"))
+        self.copy(pattern="*.hpp", dst="include", src=os.path.join("sources", "single_include"))
 
     def package_id(self):
         self.info.header_only()
