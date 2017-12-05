@@ -8,14 +8,14 @@ The packages generated with this **conanfile** can be found in [Bintray](https:/
 
 ### Basic setup
 
-    $ conan install clara/0.0.2.4@bincrafters/stable
+    $ conan install clara/1.0@bincrafters/stable
 
 ### Project setup
 
 If you handle multiple dependencies in your project is better to add a *conanfile.txt*
 
     [requires]
-    clara/0.0.2.4@bincrafters/stable
+    clara/1.0@bincrafters/stable
 
     [generators]
     txt
@@ -44,7 +44,7 @@ This is a header only library, so nothing needs to be built.
 
 ## Upload
 
-    $ conan upload clara/0.0.2.4@bincrafters/stable --all -r bincrafters
+    $ conan upload clara/1.0@bincrafters/stable --all -r bincrafters
 
 ## License
 [MIT](LICENSE)
