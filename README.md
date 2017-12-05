@@ -1,21 +1,21 @@
-[ ![Download](https://api.bintray.com/packages/bincrafters/public-conan/somelib%3Abincrafters/images/download.svg) ](https://bintray.com/bincrafters/public-conan/somelib%3Abincrafters/_latestVersion)
+[![Download](https://api.bintray.com/packages/bincrafters/public-conan/clara%3Abincrafters/images/download.svg)](https://bintray.com/bincrafters/public-conan/clara%3Abincrafters/_latestVersion)
 
-[Conan.io](https://conan.io) package for [somelib](https://github.com/someauthor/somelib) project
+[Conan.io](https://conan.io) package for [Clara](https://github.com/catchorg/Clara) project
 
-The packages generated with this **conanfile** can be found in [Bintray](https://bintray.com/bincrafters/public-conan/somelib%3Abincrafters).
+The packages generated with this **conanfile** can be found in [Bintray](https://bintray.com/bincrafters/public-conan/clara%3Abincrafters).
 
 ## For Users: Use this package
 
 ### Basic setup
 
-    $ conan install somelib/0.0.0@bincrafters/stable
+    $ conan install clara/0.0.2.4@bincrafters/stable
 
 ### Project setup
 
 If you handle multiple dependencies in your project is better to add a *conanfile.txt*
 
     [requires]
-    somelib/0.0.0@bincrafters/stable
+    clara/0.0.2.4@bincrafters/stable
 
     [generators]
     txt
@@ -34,7 +34,7 @@ The example below shows the commands used to publish to bincrafters conan reposi
 
 This is a header only library, so nothing needs to be built.
 
-## Package 
+## Package
 
     $ conan create bincrafters/stable
 
@@ -44,7 +44,7 @@ This is a header only library, so nothing needs to be built.
 
 ## Upload
 
-    $ conan upload somelib/0.0.0@bincrafters/stable --all -r bincrafters
+    $ conan upload clara/0.0.2.4@bincrafters/stable --all -r bincrafters
 
 ## License
-[LICENSE_TYPE](LICENSE)
+[MIT](LICENSE)

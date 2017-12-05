@@ -5,35 +5,22 @@ from conans import ConanFile, tools
 import os
 
 
-class LibnameConan(ConanFile):
-    name = "libname"
-    version = "0.0.0"
+class ClaraConan(ConanFile):
+    name = "clara"
+    version = "1.0"
     url = "https://github.com/bincrafters/conan-libname"
-    description = "Keep it short"
-    license = "https://github.com/someauthor/somelib/blob/master/LICENSES"
-    exports_sources = ["CMakeLists.txt", "LICENSE"]
-    settings = "os", "arch", "compiler", "build_type"
-    options = {"shared": [True, False]}
-    default_options = "shared=False"
-    #use static org/channel for libs in conan-center
-    #use version ranges for dependencies unless there's a reason not to
-    requires = "OpenSSL/[>=1.0.2l]@conan/stable", \
-        "zlib/[>=1.2.11]@conan/stable"
-        
-    def requirements(self):
-        #use dynamic org/channel for libs in bincrafters
-        self.requires.add("libuv/[>=1.15.0]@bincrafters/stable")
+    description = "A simple to use, composable, command line parser for C++ 11 and beyond"
+    license = "https://raw.githubusercontent.com/catchorg/Clara/master/LICENSE"
+    exports_sources = ["LICENSE"]
 
     def source(self):
-        source_url = "https://github.com/libauthor/libname"
-        tools.get("{0}/archive/v{1}.tar.gz".format(source_url, self.version))
-        extracted_dir = self.name + "-" + self.version
-        os.rename(extracted_dir, "sources")
-        #Rename to "sources" is a convention to simplify later steps
+        source_url = "https://github.com/catchorg/Clara"
+        tools.get("{0}/archive/master.zip".format(source_url))
+        os.rename("Clara-master", "sources")
 
     def package(self):
-        self.copy(pattern="LICENSE")
-        self.copy(pattern="*", dst="include", src="include")
+        self.copy(pattern="LICENSE", dst="licenses", src="sources")
+        self.copy(pattern="*.hpp", dst="include", src=os.path.join("sources", "include"))
 
     def package_id(self):
         self.info.header_only()
