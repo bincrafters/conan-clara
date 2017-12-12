@@ -7,7 +7,7 @@ import os
 
 class ClaraConan(ConanFile):
     name = "clara"
-    version = "1.0"
+    version = "1.0.0"
     url = "https://github.com/bincrafters/conan-libname"
     description = "A simple to use, composable, command line parser for C++ 11 and beyond"
     license = "https://raw.githubusercontent.com/catchorg/Clara/master/LICENSE"
