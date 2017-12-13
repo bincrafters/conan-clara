@@ -8,8 +8,10 @@ import os
 class ClaraConan(ConanFile):
     name = "clara"
     version = "1.0.0"
-    url = "https://github.com/bincrafters/conan-libname"
     description = "A simple to use, composable, command line parser for C++ 11 and beyond"
+    homepage = "https://github.com/catchorg/Clara"
+    url = "https://github.com/bincrafters/conan-libname"
+    author = "Bincrafters <bincrafters@gmail.com>"
     license = "https://raw.githubusercontent.com/catchorg/Clara/master/LICENSE"
     exports_sources = ["LICENSE"]
 
