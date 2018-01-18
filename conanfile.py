@@ -7,22 +7,25 @@ import os
 
 class ClaraConan(ConanFile):
     name = "clara"
-    version = "1.0.0"
+    version = "1.0"
     description = "A simple to use, composable, command line parser for C++ 11 and beyond"
-    homepage = "https://github.com/catchorg/Clara"
     url = "https://github.com/bincrafters/conan-libname"
-    author = "Bincrafters <bincrafters@gmail.com>"
-    license = "https://raw.githubusercontent.com/catchorg/Clara/master/LICENSE"
-    exports_sources = ["LICENSE"]
+    homepage = "https://github.com/catchorg/Clara"
+    license = "BSL-1.0"
+    source_subfolder = "source_subfolder"
+    exports = ["LICENSE.md"]
 
     def source(self):
         source_url = "https://github.com/catchorg/Clara"
-        tools.get("{0}/archive/master.zip".format(source_url))
-        os.rename("Clara-master", "sources")
+        tools.get("{0}/archive/v{1}.zip".format(source_url, self.version))
+        extracted_dir = self.name + "-" + self.version
+        os.rename(extracted_dir, self.source_subfolder)
 
     def package(self):
-        self.copy(pattern="LICENSE", dst="licenses", src="sources")
-        self.copy(pattern="*.hpp", dst="include", src=os.path.join("sources", "single_include"))
+        include_folder_src = os.path.join(self.source_subfolder, "single_include")
+        
+        self.copy(pattern="LICENSE.txt", dst="license", src=self.source_subfolder)
+        self.copy(pattern="*.hpp", dst="include", src=include_folder_src)
 
     def package_id(self):
         self.info.header_only()

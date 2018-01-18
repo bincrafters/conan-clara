@@ -15,4 +15,6 @@ class TestPackageConan(ConanFile):
         cmake.build()
 
     def test(self):
-        self.run(os.path.join("bin", "test_package"))
+        with tools.environment_append(RunEnvironment(self).vars):
+            self.run(os.path.join("bin", "test_package"))
+
