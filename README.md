@@ -2,7 +2,7 @@
 
 | Bintray | Appveyor | Travis |
 |---------|-----------|--------|
-|[![Download](https://api.bintray.com/packages/bincrafters/public-conan/clara%3Abincrafters/images/download.svg)](https://bintray.com/bincrafters/public-conan/clara%3Abincrafters/_latestVersion)|[![Build status](https://ci.appveyor.com/api/projects/status/github/bincrafters/conan-clara?svg=true)](https://ci.appveyor.com/project/BinCrafters/conan-clara)|[![Build Status](https://travis-ci.org/bincrafters/conan-clara.svg?branch=stable%2F1.0.0)](https://travis-ci.org/bincrafters/conan-clara)|
+|[![Download](https://api.bintray.com/packages/bincrafters/public-conan/clara%3Abincrafters/images/download.svg)](https://bintray.com/bincrafters/public-conan/clara%3Abincrafters/_latestVersion)|[![Build status](https://ci.appveyor.com/api/projects/status/github/bincrafters/conan-clara?svg=true)](https://ci.appveyor.com/project/BinCrafters/conan-clara)|[![Build Status](https://travis-ci.org/bincrafters/conan-clara.svg?branch=stable%2F1.1.0)](https://travis-ci.org/bincrafters/conan-clara)|
 
 ## Conan.io Information
 
@@ -39,7 +39,7 @@ The contents of this GIT repository are completely separate from the software be
     ~/.conan/data/<pkg_name>/<pkg_version>/bincrafters/package/<random_package_id>/license/<LICENSE_FILES_HERE>
 
 *Note :   The most common filenames for OSS licenses are `LICENSE` AND `COPYING` without file extensions.*
-	
+
 ### License for Bincrafters recipe:
 
     ~/.conan/data/<pkg_name>/<pkg_version>/bincrafters/export/LICENSE.md
