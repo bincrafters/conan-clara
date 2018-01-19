@@ -14,6 +14,7 @@ class ClaraConan(ConanFile):
     license = "BSL-1.0"
     source_subfolder = "source_subfolder"
     exports = ["LICENSE.md"]
+    no_copy_source = True
 
     def source(self):
         source_url = "https://github.com/catchorg/Clara"

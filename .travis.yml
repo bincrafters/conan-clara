@@ -1,3 +1,4 @@
+
 linux: &linux
    os: linux
    sudo: required
@@ -16,4 +17,4 @@ install:
 
 script:
   - chmod +x .travis/run.sh
-  - ./.travis/run.sh
+- ./.travis/run.sh
