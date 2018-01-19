@@ -20,7 +20,7 @@ class ClaraConan(ConanFile):
         source_url = "https://github.com/catchorg/Clara"
         tools.get("{0}/archive/v{1}.zip".format(source_url, self.version))
         extracted_dir = self.name + "-" + self.version
-        os.rename(extracted_dir, self.source_subfolder)
+        os.rename(extracted_dir.capitalize(), self.source_subfolder)
 
     def package(self):
         include_folder_src = os.path.join(self.source_subfolder, "single_include")
