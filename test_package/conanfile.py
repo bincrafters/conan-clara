@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from conans import ConanFile, CMake, tools, RunEnvironment
 import os
+from conans import ConanFile, CMake
 
 
 class TestPackageConan(ConanFile):
@@ -15,5 +15,5 @@ class TestPackageConan(ConanFile):
         cmake.build()
 
     def test(self):
-        with tools.environment_append(RunEnvironment(self).vars):
-            self.run(os.path.join("bin", "test_package"))
+        bin_path = os.path.join("bin", "test_package")
+        self.run(bin_path, run_environment=True)

@@ -11,14 +11,15 @@ class ClaraConan(ConanFile):
     description = "A simple to use, composable, command line parser for C++ 11 and beyond"
     url = "https://github.com/bincrafters/conan-clara"
     homepage = "https://github.com/catchorg/Clara"
+    author = "Bincrafters <bincrafters@gmail.com>"
+    topics = ("conan", "clara", "cli", "cpp11", "command-parser")
     license = "BSL-1.0"
     source_subfolder = "source_subfolder"
     exports = ["LICENSE.md"]
     no_copy_source = True
 
     def source(self):
-        source_url = "https://github.com/catchorg/Clara"
-        tools.get("{0}/archive/v{1}.zip".format(source_url, self.version))
+        tools.get("{0}/archive/v{1}.zip".format(self.homepage, self.version))
         extracted_dir = self.name + "-" + self.version
         os.rename(extracted_dir.capitalize(), self.source_subfolder)
 
