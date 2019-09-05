@@ -14,18 +14,18 @@ class ClaraConan(ConanFile):
     author = "Bincrafters <bincrafters@gmail.com>"
     topics = ("conan", "clara", "cli", "cpp11", "command-parser")
     license = "BSL-1.0"
-    source_subfolder = "source_subfolder"
+    _source_subfolder = "source_subfolder"
     exports = ["LICENSE.md"]
     no_copy_source = True
 
     def source(self):
         tools.get("{0}/archive/v{1}.zip".format(self.homepage, self.version))
         extracted_dir = self.name + "-" + self.version
-        os.rename(extracted_dir.capitalize(), self.source_subfolder)
+        os.rename(extracted_dir.capitalize(), self._source_subfolder)
 
     def package(self):
-        include_folder_src = os.path.join(self.source_subfolder, "single_include")
-        self.copy(pattern="LICENSE.txt", dst="license", src=self.source_subfolder)
+        include_folder_src = os.path.join(self._source_subfolder, "single_include")
+        self.copy(pattern="LICENSE.txt", dst="license", src=self._source_subfolder)
         self.copy(pattern="*.hpp", dst="include", src=include_folder_src)
 
     def package_id(self):
